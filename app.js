@@ -1,11 +1,25 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+const mongodb = require('./db/connection');
 
 
 const hostname = '127.0.0.1';
-const port = 3000;
+const port = process.env.PORT || 8080;
 
-app.use('/', require('./routes'));
 
-app.listen(process.env.port || port);
-console.log('Web Server is listening at port ' + (process.env.port || port) + ` http://${hostname}:${port}/`);
+
+
+app.use(bodyParser.json()).use((req, res, next) => {
+    res.setHeader('Acces-Control-Allow-Origin', '*');
+    next();
+}).use('/', require('./routes'));
+
+mongodb.databaseConnecting((err, mongodb) => {
+    if(err) {
+        console.log(err);
+    } else {
+        app.listen(port);
+        console.log('Web Server is listening at pot ' + (process.env.PORT || port) + ` http://${hostname}:${port}/`);
+    }
+});
