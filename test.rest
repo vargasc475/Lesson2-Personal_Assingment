@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 
 ### Delete a document in the collection 
-DELETE http://localhost:8080/contacts/delete/6487cd0c093372f0fdfc4cb2
+DELETE http://localhost:8080/contacts/delete/6489144ff3aa641596a0ef14
 
 // RENDER
 ### Get all documents from the collection
