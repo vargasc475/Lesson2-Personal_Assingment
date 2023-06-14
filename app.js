@@ -8,9 +8,10 @@ const hostname = '127.0.0.1';
 const port = process.env.PORT || 8080;
 
 
+// app.use(cors());
 
-
-app.use(bodyParser.json()).use((req, res, next) => {
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })).use((req, res, next) => {
     res.setHeader('Acces-Control-Allow-Origin', '*');
     next();
 }).use('/', require('./routes'));

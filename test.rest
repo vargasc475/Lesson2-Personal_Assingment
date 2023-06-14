@@ -1,8 +1,83 @@
+// LOCALHOST
+### Get all documents from the collection
 GET http://localhost:8080/contacts
 
+### Get one document from the collection
 GET http://localhost:8080/contacts/648328e5acb2c1d834347ef6
 
+### Get one document from the collection
 GET http://localhost:8080/contacts/64832d40acb2c1d834347ef7
 
+### Get one document from the collection
 GET http://localhost:8080/contacts/64832dd7acb2c1d834347ef8
 
+### Create a new Document in the collection
+POST http://localhost:8080/contacts/post
+Content-Type: application/json
+
+{
+  "firstName": "Christian",
+  "lastName": "Vargas",
+  "email": "christianvargas@gmail.com",
+  "favoriteColor": "Orange",
+  "birthday": "October 10th",
+  "id": "4"
+}
+
+### Update a document in the collection 
+PUT http://localhost:8080/contacts/put/6487cd0c093372f0fdfc4cb2
+Content-Type: application/json
+
+{
+  "firstName": "David",
+  "lastName": "Herrera",
+  "email": "davidherrera@gmail.com",
+  "favoriteColor": "Blue",
+  "birthday": "October 10th",
+  "id": "4"
+}
+
+### Delete a document in the collection 
+DELETE http://localhost:8080/contacts/delete/6487cd0c093372f0fdfc4cb2
+
+// RENDER
+### Get all documents from the collection
+GET https://lesson2-personal-assingment.onrender.com/contacts
+
+### Get one document with id from the collection
+GET https://lesson2-personal-assingment.onrender.com/contacts/648328e5acb2c1d834347ef6
+
+### Get one document with id from the collection
+GET https://lesson2-personal-assingment.onrender.com/contacts/64832d40acb2c1d834347ef7
+
+### Get one document with id from the collection
+GET https://lesson2-personal-assingment.onrender.com/contacts/64832dd7acb2c1d834347ef8
+
+### Create a new Document in the collection
+POST https://lesson2-personal-assingment.onrender.com/contacts/post
+Content-Type: application/json
+
+{
+  "firstName": "Rick",
+  "lastName": "Williams",
+  "email": "rickwilliams@gmail.com",
+  "favoriteColor": "Brown",
+  "birthday": "December 10th",
+  "id": "4"
+}
+
+### Update a document in the collection with id
+PUT https://lesson2-personal-assingment.onrender.com/contacts/put/6487cd0c093372f0fdfc4cb2
+Content-Type: application/json
+
+{
+  "firstName": "David",
+  "lastName": "Herrera",
+  "email": "davidherrera@gmail.com",
+  "favoriteColor": "Blue",
+  "birthday": "October 10th",
+  "id": "4"
+}
+
+### Delete a document in the collection with id
+DELETE https://lesson2-personal-assingment.onrender.com/contacts/delete/6487cd0c093372f0fdfc4cb2
