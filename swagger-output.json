@@ -5,7 +5,7 @@
     "description": "Description",
     "version": "1.0.0"
   },
-  "host": "lesson2-personal-assingment.onrender.com",
+  "host": "lesson2-personal-assingment.onrender.com/contacts",
   "basePath": "/",
   "schemes": [
     "https"
