@@ -8,7 +8,7 @@
   "host": "localhost:8080/contacts",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
