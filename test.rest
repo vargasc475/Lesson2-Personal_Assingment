@@ -80,4 +80,4 @@ Content-Type: application/json
 }
 
 ### Delete a document in the collection with id
-DELETE https://lesson2-personal-assingment.onrender.com/contacts/delete/64891604f75278ec242a8df3
+DELETE https://lesson2-personal-assingment.onrender.com/contacts/delete/648bb7b97ab4df80ce53d09b

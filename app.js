@@ -8,8 +8,6 @@ const mongodb = require('./db/connection');
 const port = process.env.PORT || 8080;
 
 
-// app.use(cors());
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })).use((req, res, next) => {
     res.setHeader('Acces-Control-Allow-Origin', '*');

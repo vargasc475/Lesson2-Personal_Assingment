@@ -11,7 +11,7 @@ const findOneDocument = async (req, res) => {
   
 }
   
-const findAllDocuments = async (req, res, next) => {
+const findAllDocuments = async (req, res) => {
     const result = await mongodb.databaseConnected().db("cse341").collection("Contacts").find();
     result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
@@ -29,6 +29,14 @@ const newDocument = async (req, res) => {
         favoriteColor: req.body.favoriteColor,
         birthday: req.body.birthday 
     };
+
+    // const newColl = {
+    //     "firstName": "ken",
+    //     "lastName": "clark",
+    //     "email": "vfndksvfbdsjk",
+    //     "favoriteColor": "Red",
+    //     "birthday": "25 June"  
+    // };
     console.log(newColl);
 
     const result = await mongodb.databaseConnected().db('cse341').collection('Contacts').insertOne(newColl);
