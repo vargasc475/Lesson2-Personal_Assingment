@@ -58,7 +58,7 @@ POST https://lesson2-personal-assingment.onrender.com/contacts/post
 Content-Type: application/json
 
 {
-  "firstName": "Rick",
+  "firstName": "Mordecay",
   "lastName": "Williams",
   "email": "rickwilliams@gmail.com",
   "favoriteColor": "Brown",
@@ -67,7 +67,7 @@ Content-Type: application/json
 }
 
 ### Update a document in the collection with id
-PUT https://lesson2-personal-assingment.onrender.com/contacts/put/6487cd0c093372f0fdfc4cb2
+PUT https://lesson2-personal-assingment.onrender.com/contacts/put/64891942302f501796be391a
 Content-Type: application/json
 
 {
@@ -80,4 +80,4 @@ Content-Type: application/json
 }
 
 ### Delete a document in the collection with id
-DELETE https://lesson2-personal-assingment.onrender.com/contacts/delete/6487cd0c093372f0fdfc4cb2
+DELETE https://lesson2-personal-assingment.onrender.com/contacts/delete/64891604f75278ec242a8df3
