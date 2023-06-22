@@ -14,6 +14,10 @@ app.use(bodyParser.urlencoded({ extended: true })).use((req, res, next) => {
     next();
 }).use('/', require('./routes'));
 
+process.on('uncaughtException', (err, origin) => {
+    console.log(process.stderr.fd, `Caught exception: ${err}\n` + `Exception origin: ${origin}`);
+  });
+
 mongodb.databaseConnecting((err) => {
     if(err) {
         console.log(err);

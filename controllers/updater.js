@@ -7,21 +7,28 @@ const findOneDocument = async (req, res) => {
       }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.databaseConnected().db("cse341").collection("Contacts").find({ _id: userId });
-    result.toArray().then((lists) => {
+    result.toArray((err, result) => {
+        if (err) {
+            res.status(400).json({ message: err});
+        }
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists[0]);
-    });
+        res.status(200).json(result[0]);
+        });
+    };
   
-}
+
   
 const findAllDocuments = async (req, res) => {
     const result = await mongodb.databaseConnected().db("cse341").collection("Contacts").find();
-    result.toArray().then((lists) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(lists);
-    });
+    result.toArray((err, lists) => {
+        if (err) {
+            res.status(400).json({ message: err});
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+        });
+    };
 
-}
 
 const newDocument = async (req, res) => {
 
