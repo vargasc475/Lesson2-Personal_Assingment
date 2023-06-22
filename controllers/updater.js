@@ -2,6 +2,9 @@ const mongodb = require('../db/connection');
 const ObjectId = require('mongodb').ObjectId;
 
 const findOneDocument = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid contact id to find a contact.');
+      }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.databaseConnected().db("cse341").collection("Contacts").find({ _id: userId });
     result.toArray().then((lists) => {
@@ -30,13 +33,6 @@ const newDocument = async (req, res) => {
         birthday: req.body.birthday 
     };
 
-    // const newColl = {
-    //     "firstName": "ken",
-    //     "lastName": "clark",
-    //     "email": "vfndksvfbdsjk",
-    //     "favoriteColor": "Red",
-    //     "birthday": "25 June"  
-    // };
     console.log(newColl);
 
     const result = await mongodb.databaseConnected().db('cse341').collection('Contacts').insertOne(newColl);
@@ -48,6 +44,9 @@ const newDocument = async (req, res) => {
 };
 
 const updateDocument = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid contact id to find a contact.');
+      }
     const userId = new ObjectId(req.params.id);
 
     const newData = {
@@ -68,6 +67,9 @@ const updateDocument = async (req, res) => {
 }
 
 const deleteDocument = async (req, res) => {
+    if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid contact id to find a contact.');
+      }
     const userId = new ObjectId(req.params.id);
 
     const result = await mongodb.databaseConnected().db('cse341').collection('Contacts').deleteOne({ _id: userId });
